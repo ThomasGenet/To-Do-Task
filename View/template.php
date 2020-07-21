@@ -14,17 +14,26 @@
 <body>
 <nav id="navbar-custom" class="navbar navbar-default navbar-fixed-left">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#"><h1>To Do Task</h1></a>
             </div>
-            <!-- votre menu ICI -->
+            <ul class="nav justify-content-center">
+            
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Project</a>
+            </li>  
+        </ul>    
         </nav>
+        
 
 
 
         <div class="container-fluid" >
             <div class="app-main-content">
             <?= $content; ?>
-                <!-- votre contenu ICI -->
+                
                 
             </div>
         </div>

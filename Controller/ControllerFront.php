@@ -7,11 +7,11 @@ function registration(){
 
     // Vérification de la validité des informations
     $admin = 0;
-    $pseudo = htmlspecialchars($_POST['pseudo_member']);
+    $pseudo = htmlspecialchars($_POST['pseudo']);
     // Hachage du mot de passe
-    $pass_hache = password_hash($_POST['pass_member'], PASSWORD_DEFAULT);
-    $mail = htmlspecialchars($_POST['mail_member']);
-    $str = strlen($_POST["pass_member"]);
+    $pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+    $mail = htmlspecialchars($_POST['mail']);
+    $str = strlen($_POST["pass"]);
 
     $req = new UserManager;
     $pseudodouble = $req -> pseudodouble($pseudo);
@@ -89,4 +89,8 @@ function logout(){
 }
 function pagedefault(){
     require('./View/ViewLog.php');
+}
+function Error($e){
+    $msgErreur = $e->getMessage();
+    require ('./View/ViewError.php');
 }

@@ -2,6 +2,7 @@
 body{
     display: flex;
     flex-direction: column;
+    left: 16%;
 }
 footer{
     width: 85%;
@@ -23,6 +24,11 @@ a{
 nav{
     position: absolute;
 }
+.navbar-header{
+    position: absolute;
+    top: 2em;
+}
+
 
 /* navbar-fixed-left */
 

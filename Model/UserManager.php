@@ -6,9 +6,8 @@ class UserManager extends Database{
         
         $bdd = $this -> bddconnect();
     // Insertion
-        $req = $bdd->prepare('INSERT INTO membre(admin_member,pseudo_member, pass_member, mail_member, date_inscription) VALUES (:admin_member,:pseudo_member, :pass_member, :mail_member, CURDATE())');
+        $req = $bdd->prepare('INSERT INTO member(pseudo, pass, mail, date_inscription) VALUES (:pseudo_member, :pass_member, :mail_member, CURDATE())');
         $req->execute(array(
-            'admin_member' => $admin,
             'pseudo_member' => $pseudo,
             'pass_member' => $pass_hache,
             'mail_member' => $mail));
