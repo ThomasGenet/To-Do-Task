@@ -71,7 +71,7 @@ function connect(){
         {
             if (password_verify($pass_member, $infoUser['pass'])) {
                 
-                $_SESSION['id_member'] = $infoUser['id'];
+                $_SESSION['id'] = $infoUser['id'];
                 $_SESSION['pseudo'] = $infoUser['pseudo'];
                 echo "vous êtes connecté";
                 //header ('Location: index.php');

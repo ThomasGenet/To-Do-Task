@@ -37,7 +37,7 @@ class UserManager extends Database{
 
         $bdd = $this -> bddconnect();
         //  Récupération de l'utilisateur et de son pass hashé
-        $request = $bdd->prepare('SELECT id, mail, pass FROM member WHERE mail = :mail');
+        $request = $bdd->prepare('SELECT id, pseudo, mail, pass FROM member WHERE mail = :mail');
         $request->execute(array(
             'mail' => $mail_signin));
         $resultat = $request->fetch();
