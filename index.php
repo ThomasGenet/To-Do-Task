@@ -8,7 +8,7 @@ try{
     if (isset($_GET['action'])){
         if($_GET['action']== 'registration'){
             registration();
-        }elseif($_GET['action']== 'log'){
+        }elseif($_GET['action']== 'connect'){
             if(isset($_GET['id'])){
                 connect();
             }

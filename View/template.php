@@ -8,44 +8,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?= $title ;?> </title>
-   
+
 </head>
 
 <body>
-<nav id="navbar-custom" class="navbar navbar-default navbar-fixed-left">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#"><h1>To Do Task</h1></a>
-            </div>
-            <ul class="nav justify-content-center">
-            
+    <nav id="navbar-custom" class="navbar navbar-default navbar-fixed-left">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <h1>To Do Task</h1>
+            </a>
+        </div>
+        <ul class="nav justify-content-center">
+
             <li class="nav-item active">
                 <a class="nav-link" href="#">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Project</a>
-            </li>  
-        </ul>    
-        </nav>
-        
-
-
-
-        <div class="container-fluid" >
-            <div class="app-main-content">
-            <?= $content; ?>
-                
-                
-            </div>
-        </div>
-
+                <a class="nav-link" href="#">Projet</a>
+            </li>
+        </ul>
         <footer>
         <p>Copyright Thomas Genet Openclassrooms 2020</p>
     </footer> 
-
-    
-
+    </nav>
 
 
+
+
+    <div class="container-fluid">
+        <div class="app-main-content">
+            <?= $content; ?>
+
+        </div>
+    </div>
 
 </body>
+
 </html>

@@ -2,31 +2,33 @@
 require ('Model/Database.php');
 
 class UserManager extends Database{
-    public function registration($admin, $pseudo, $pass_hache, $mail){
+    public function registration($pseudo, $pass_hache, $mail){
         
         $bdd = $this -> bddconnect();
+        
     // Insertion
-        $req = $bdd->prepare('INSERT INTO member(pseudo, pass, mail, date_inscription) VALUES (:pseudo_member, :pass_member, :mail_member, CURDATE())');
+        $req = $bdd->prepare('INSERT INTO member(pseudo, pass, mail, date_inscription) VALUES (:pseudo, :pass, :mail, CURDATE())');
         $req->execute(array(
-            'pseudo_member' => $pseudo,
-            'pass_member' => $pass_hache,
-            'mail_member' => $mail));
+            'pseudo' => $pseudo,
+            'pass' => $pass_hache,
+            'mail' => $mail));
         return $req;
+        die(var_dump($req));
     }
     public function pseudodouble($pseudo){
         $bdd = $this -> bddconnect();
         //Chercher si il y a un doublon
-        $request = $bdd->prepare('SELECT id FROM membre WHERE pseudo_member = :pseudo_member');
+        $request = $bdd->prepare('SELECT id FROM membre WHERE pseudo = :pseudo');
         $request->execute(array(
-            'pseudo_member' => $pseudo));
+            'pseudo' => $pseudo));
         return $request;
     }
     public function maildouble($mail){
         $bdd = $this -> bddconnect();
         //Chercher si il y a un doublon
-        $request = $bdd->prepare('SELECT id FROM membre WHERE mail_member = :mail_member');
+        $request = $bdd->prepare('SELECT id FROM membre WHERE mail = :mail');
         $request->execute(array(
-            'mail_member' => $mail));
+            'mail' => $mail));
         return $request;
     }
     //Se connecter
@@ -34,9 +36,9 @@ class UserManager extends Database{
 
         $bdd = $this -> bddconnect();
         //  Récupération de l'utilisateur et de son pass hashé
-        $request = $bdd->prepare('SELECT id, pseudo_member, admin_member, pass_member FROM membre WHERE mail_member = :mail_member');
+        $request = $bdd->prepare('SELECT id, mail, pass FROM membre WHERE mail = :mail');
         $request->execute(array(
-            'mail_member' => $mail_signin));
+            'mail' => $mail_signin));
         $resultat = $request->fetch();
         return $resultat;
         

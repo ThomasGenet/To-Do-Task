@@ -5,9 +5,7 @@ body{
     left: 16%;
 }
 footer{
-    width: 85%;
-    position: absolute;
-    right: 0;
+    color: #fff;
     position: fixed;
     display: flex;
     justify-content: center;
@@ -24,9 +22,28 @@ a{
 nav{
     position: absolute;
 }
+nav h1{
+    font-size: 2em;
+}
+#navbar-custom{
+    display: flex;
+    justify-content: center;
+}
 .navbar-header{
     position: absolute;
     top: 2em;
+    
+}
+nav ul{
+    display: flex;
+    flex-direction: column;
+}
+nav li{
+    font-size: 2em;
+}
+.app-main-content{
+ display: flex;
+ justify-content: center;
 }
 
 
@@ -173,4 +190,7 @@ nav{
     cursor: pointer;
     background: #0062cc;
     color: #fff;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }

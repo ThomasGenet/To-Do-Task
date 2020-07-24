@@ -2,7 +2,6 @@
 require_once ('./Model/UserManager.php');
 
 
-
 function registration(){
 
     // Vérification de la validité des informations
@@ -11,6 +10,7 @@ function registration(){
     // Hachage du mot de passe
     $pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
     $mail = htmlspecialchars($_POST['mail']);
+    //die (var_dump($_POST['pass']));
     $str = strlen($_POST["pass"]);
 
     $req = new UserManager;
@@ -27,7 +27,8 @@ function registration(){
             //Test mot de passe + de 10 caractère
             if($str > 10){
                 $requ = new UserManager;
-                $infoRegist = $requ -> registration($admin, $pseudo, $pass_hache, $mail);
+                $infoRegist = $requ -> registration($pseudo, $pass_hache, $mail);
+                die(var_dump(registration($pseudo, $pass_hache, $mail)));
                 header ('Location: index.php?action=FormLog');
                 exit();
             }
@@ -50,8 +51,8 @@ function registration(){
 }
 
 function connect(){
-    $mail_signin = htmlspecialchars($_POST['mail_member_login']);
-    $pass_member = htmlspecialchars($_POST['pass_member_login']);
+    $mail_signin = htmlspecialchars($_POST['mail_log']);
+    $pass_member = htmlspecialchars($_POST['pass_log']);
     
     
     // Comparaison du pass envoyé avec la base via le formulaire 
@@ -64,11 +65,10 @@ function connect(){
         }
         else
         {
-            if (password_verify($pass_member, $infoUser['pass_member'])) {
+            if (password_verify($pass_member, $infoUser['pass'])) {
                 session_start();
                 $_SESSION['id_member'] = $infoUser['id'];
-                $_SESSION['admin'] = $infoUser['admin_member'];
-                $_SESSION['pseudo'] = $infoUser['pseudo_member'];
+                $_SESSION['pseudo'] = $infoUser['pseudo'];
                 header ('Location: index.php');
                 exit();
             }
