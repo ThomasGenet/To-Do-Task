@@ -10,31 +10,35 @@ function registration(){
     // Hachage du mot de passe
     $pass_hache = password_hash($_POST['pass'], PASSWORD_DEFAULT);
     $mail = htmlspecialchars($_POST['mail']);
-    //die (var_dump($_POST['pass']));
+    
     $str = strlen($_POST["pass"]);
 
     $req = new UserManager;
     $pseudodouble = $req -> pseudodouble($pseudo);
     $count = $pseudodouble -> rowCount();
+    $pseudodouble -> closeCursor();
 
     $request = new UserManager;
     $maildouble = $request -> maildouble($mail);
     $countmail = $maildouble -> rowCount();
+    $maildouble -> closeCursor();
     //Test pseudo déjà utilisé
-    //die(var_dump($count));
+    
     if(!$count > 0){
         if(!$countmail > 0){
             //Test mot de passe + de 10 caractère
             if($str > 10){
+                
                 $requ = new UserManager;
                 $infoRegist = $requ -> registration($pseudo, $pass_hache, $mail);
-                die(var_dump(registration($pseudo, $pass_hache, $mail)));
-                header ('Location: index.php?action=FormLog');
+                //$infoRegist -> closeCursor();
+               
+                //header ('Location: index.php');
                 exit();
             }
             else{
                 throw new Exception("Votre mot de passe doit contenir au minimum 10 caractère.");
-                header ('Location: index.php?action=FormLog');
+                //header ('Location: index.php');
                 exit();
             }
         }
@@ -66,11 +70,12 @@ function connect(){
         else
         {
             if (password_verify($pass_member, $infoUser['pass'])) {
-                session_start();
+                
                 $_SESSION['id_member'] = $infoUser['id'];
                 $_SESSION['pseudo'] = $infoUser['pseudo'];
-                header ('Location: index.php');
-                exit();
+                echo "vous êtes connecté";
+                //header ('Location: index.php');
+                //exit();
             }
             else {
                 echo 'Mauvais identifiant ou mot de passe !';

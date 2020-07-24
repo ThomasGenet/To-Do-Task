@@ -17,7 +17,6 @@ footer p{
 }
 a{
     text-decoration: none;
-    color: #fff;
 }
 nav{
     position: absolute;
@@ -28,11 +27,14 @@ nav h1{
 #navbar-custom{
     display: flex;
     justify-content: center;
+    background: -webkit-linear-gradient( #0072ff, #c51138);
 }
 .navbar-header{
     position: absolute;
     top: 2em;
-    
+}
+nav a{
+    color: #fff ;
 }
 nav ul{
     display: flex;

@@ -9,12 +9,8 @@ try{
         if($_GET['action']== 'registration'){
             registration();
         }elseif($_GET['action']== 'connect'){
-            if(isset($_GET['id'])){
                 connect();
-            }
-            else{
-                throw new Exception("manque d'info connect");
-            }
+    
         }
         else{
             throw new Exception("manque d'info");
