@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    
+
     <nav id="navbar-custom" class="navbar navbar-default navbar-fixed-left">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
@@ -25,12 +25,12 @@
                 <a class="nav-link" href="#">Accueil</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Projet</a>
+                <a class="nav-link" href="index.php?action=project">Projet</a>
             </li>
         </ul>
         <footer>
-        <p>Copyright Thomas Genet Openclassrooms 2020</p>
-    </footer> 
+            <p>Copyright Thomas Genet Openclassrooms 2020</p>
+        </footer>
     </nav>
 
 

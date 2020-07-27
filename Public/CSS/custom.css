@@ -45,7 +45,18 @@ nav li{
 }
 .app-main-content{
  display: flex;
+ flex-direction: column;
  justify-content: center;
+}
+#form-content .row{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    margin: 1em;
+    position: absolute;
+    
 }
 
 

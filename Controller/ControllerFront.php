@@ -1,7 +1,16 @@
 <?php 
 require_once ('./Model/UserManager.php');
+require_once ('./Model/ProjectManager.php');
+require_once ('./Model/TaskManager.php');
 
-
+/**
+ * registration
+ * connect
+ * logout
+ * newprojet
+ *
+ * @return void
+ */
 function registration(){
 
     // Vérification de la validité des informations
@@ -33,12 +42,12 @@ function registration(){
                 $infoRegist = $requ -> registration($pseudo, $pass_hache, $mail);
                 //$infoRegist -> closeCursor();
                
-                //header ('Location: index.php');
+                header ('Location: index.php');
                 exit();
             }
             else{
                 throw new Exception("Votre mot de passe doit contenir au minimum 10 caractère.");
-                //header ('Location: index.php');
+                header ('Location: index.php');
                 exit();
             }
         }
@@ -53,6 +62,7 @@ function registration(){
     }
     
 }
+
 
 function connect(){
     $mail_signin = htmlspecialchars($_POST['mail_log']);
@@ -74,8 +84,8 @@ function connect(){
                 $_SESSION['id'] = $infoUser['id'];
                 $_SESSION['pseudo'] = $infoUser['pseudo'];
                 echo "vous êtes connecté";
-                //header ('Location: index.php');
-                //exit();
+                header ('Location: index.php');
+                exit();
             }
             else {
                 echo 'Mauvais identifiant ou mot de passe !';
@@ -91,6 +101,25 @@ function logout(){
     $req -> logout();
     header ('Location: index.php');
     exit();
+}
+function newProject(){
+    $title = htmlspecialchars($_POST['title']);
+    $id = $_SESSION['id'];
+    $req = new ProjectManager;
+    $newProject = $req -> newProject($title, $id);
+    header ('Location: index.php?action=project');
+    exit();
+}
+
+function listProject(){
+    $req = new ProjectManager;
+    $listProjects = $req -> listProject();
+    require('./View/ViewListProject.php');
+}
+function listTask($id){
+    $req = new TaskManager;
+    $listTasks = $req -> listTask($id);
+    require('./View/ViewListTask.php');
 }
 function pagedefault(){
     require('./View/ViewLog.php');

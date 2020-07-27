@@ -12,10 +12,25 @@ try{
                 connect();
     
         }
+        elseif($_GET['action']=='project'){
+            listProject();
+        }
+        elseif($_GET['action']== 'newProject'){
+            newProject();
+        }
+        elseif($_GET['action']=='listTask'){
+            if(isset($_GET['id'])){
+                listTask($_GET['id']);
+            }
+            else{
+                throw new Exception("Pas de tâche");
+            }
+        }
         else{
             throw new Exception("manque d'info");
         }
     }
+    
     else{
         pagedefault();
     }

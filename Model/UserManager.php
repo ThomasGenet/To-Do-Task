@@ -1,13 +1,12 @@
 <?php 
-require ('Model/Database.php');
+require_once ('Model/Database.php');
 
 class UserManager extends Database{
     public function registration($pseudo, $pass_hache, $mail){
         
         $bdd = $this -> bddconnect();
-    // Insertion 
+        // Insertion 
         $req = $bdd->prepare('INSERT INTO member(pseudo, mail, pass, date_create) VALUES (:pseudo, :mail, :pass, CURDATE())');
-        //$req = $bdd->exec('INSERT INTO member(pseudo, mail, pass, date_create) VALUES (\''.$pseudo.'\,\''.$mail.'\',\''.$pass_hache.'\',CURDATE()  )');
         $req->execute(array(
             'pseudo' => $pseudo,
             'pass' => $pass_hache,
