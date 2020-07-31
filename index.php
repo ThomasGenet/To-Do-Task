@@ -26,6 +26,20 @@ try{
                 throw new Exception("Pas de tâche");
             }
         }
+        elseif($_GET['action']== 'newTask'){
+            if(isset($_GET['id'])){
+                newTask($_GET['id']);
+            }
+            else{
+                throw new Exception("Pas de nouvelle tâche");
+            }
+        }
+        elseif($_GET['action']== 'newSection'){
+            if(isset($_GET['id'])){
+                
+                newSection($_GET['id']);
+            }
+        }
         else{
             throw new Exception("manque d'info");
         }

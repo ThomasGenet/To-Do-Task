@@ -121,6 +121,20 @@ function listTask($id){
     $listTasks = $req -> listTask($id);
     require('./View/ViewListTask.php');
 }
+function newTask($id){
+    $contentTask = htmlspecialchars($_POST['taskContent']);
+    $req = new TaskManager;
+    $newTask = $req -> newTask($contentTask, $id);
+    header ('Location: index.php?action=project');
+    exit();
+}
+function newSection($id){
+    $contentSection = htmlspecialchars($_POST['sectionContent']);
+    $req = new TaskManager;
+    $newSection = $req -> newSection($contentSection, $id);
+    header ('Location: index.php?action=project');
+    exit();
+}
 function pagedefault(){
     require('./View/ViewLog.php');
 }
