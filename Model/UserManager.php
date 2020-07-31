@@ -45,7 +45,6 @@ class UserManager extends Database{
     }
     
     public function logout(){
-        //A finir !!!!!!!!!!! 
        
        // Suppression des variables de session et de la session
        $_SESSION = array();

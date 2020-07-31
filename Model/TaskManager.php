@@ -21,6 +21,14 @@ class TaskManager extends Database{
             'id_section' => $id));
             return $req;
         }
+        public function listSection($id){
+            $bdd = $this -> bddconnect();
+            // Insertion
+            $req = $bdd->prepare('SELECT * FROM section WHERE :id_project ORDER BY id asc');
+            $req->execute(array(
+                'id_project' => $id));
+            return $req;
+        }
         public function newSection($contentSection, $id){
             $bdd = $this -> bddconnect();
             // Insertion

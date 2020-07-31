@@ -3,6 +3,7 @@
 
 
 <div class="container">
+<?php if(isset($_SESSION['id'])){?>
 <div class="form">
         <div class="note">
             <p>Ajouter un projet</p>
@@ -23,7 +24,7 @@
 </div>
 <div class="container" id="container_project">
     <div class="row">
-<?php foreach($listProjects as $listProject): ?>
+<?php foreach ($listProjects as $listProject): ?>
     <div class="col-sm" >
     <div class="card" >
         <div class="card-body">   
@@ -36,7 +37,11 @@
     </div>
     <?php endforeach; ?>
     </div>
+    <?php }else{?>
+    <h3>Veuillez vous connecter</h3>
+<?php }?>
 </div>
+
 
 <?php $content = ob_get_clean();?>
 <?php require ('template.php');?>

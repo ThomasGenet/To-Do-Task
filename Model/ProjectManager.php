@@ -5,7 +5,10 @@ class ProjectManager extends Database{
     public function listProject(){
         $bdd = $this -> bddconnect();
         // Insertion
-        $req = $bdd->query('SELECT * FROM project ORDER BY id asc');
+        $req = $bdd->prepare('SELECT * FROM project WHERE id_member = :id_member ORDER BY id asc');
+        $req->execute(array(
+        'id_member' => $_SESSION['id']));
+        
         return $req;
     }
     public function newProject($title, $id){

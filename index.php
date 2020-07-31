@@ -13,7 +13,13 @@ try{
     
         }
         elseif($_GET['action']=='project'){
-            listProject();
+            if(isset($_SESSION['id'])){
+                listProject();
+            }else{
+                throw new Exception("Vous n'êtes pas connecté");
+                
+            }
+            
         }
         elseif($_GET['action']== 'newProject'){
             newProject();
@@ -39,6 +45,12 @@ try{
                 
                 newSection($_GET['id']);
             }
+        }
+        elseif($_GET['action']== 'logout'){
+            logout();
+        }
+        elseif($_GET['action']=='customer'){
+            customer();
         }
         else{
             throw new Exception("manque d'info");
