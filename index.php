@@ -49,7 +49,7 @@ try{
         elseif($_GET['action']== 'logout'){
             logout();
         }
-        elseif($_GET['action']=='customer'){
+        elseif($_GET['action']=='account'){
             customer();
         }
         else{

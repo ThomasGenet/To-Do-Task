@@ -18,11 +18,14 @@
             <a class="navbar-brand" href="#">
                 <h1>To Do Task</h1>
             </a>
+            <br>
             <?php if(isset($_SESSION['id'])){ ?>
             <a href="index.php?action=logout">Deconnexion</a>
             <?php }else{?>
             <a href="index.php">Se connecter</a>
             <?php } ?>
+            <br>
+            <a href="index.php?action=account">Mon compte</a>
         </div>
         <ul class="nav justify-content-center">
 

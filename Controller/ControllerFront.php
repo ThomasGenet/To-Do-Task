@@ -139,6 +139,9 @@ function newSection($id){
     exit();
 }
 function customer(){
+    $req = new UserManager;
+    $id = $_SESSION['id'];
+    $infoUsers = $req -> customer($id);
     require('./View/ViewCustomer.php');
 }
 function pagedefault(){

@@ -56,5 +56,14 @@ class UserManager extends Database{
        
                                    
     }
+    public function customer($id){
+        $bdd = $this -> bddconnect();
+
+        $request = $bdd->prepare('SELECT pseudo, mail, date_create, name_avatar, city FROM member WHERE id = :id ');
+        $request->execute(array(
+            'id' => $id));
+        //$resultat = $request->fetch();
+        return $request;
+    }
     
 }
