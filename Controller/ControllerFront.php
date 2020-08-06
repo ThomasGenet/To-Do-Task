@@ -142,10 +142,11 @@ function customer(){
     $req = new UserManager;
     $id = $_SESSION['id'];
     $infoUsers = $req -> customer($id);
+    
     require('./View/ViewCustomer.php');
 }
 function avatarfile(){
-    $req = new UserManager;
+    
     $id = $_SESSION['id'];
     if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
         $sizeMax = 2097152;
@@ -157,10 +158,11 @@ function avatarfile(){
                 $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 
                 if($resultat){
-                    $avatarFile = $req -> avatarfile($id, $resultat);
+                    $req = new UserManager;
+                    $avatarFile = $req -> avatarfile($id, $extensionsUpload);
                     header ('Location: index.php?action=account');
                     exit();
-                    
+
                 }
                 else{
 
@@ -176,6 +178,7 @@ function avatarfile(){
     }
     
 }
+
 function pagedefault(){
     require('./View/ViewLog.php');
 }

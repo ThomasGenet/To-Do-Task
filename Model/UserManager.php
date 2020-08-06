@@ -62,17 +62,19 @@ class UserManager extends Database{
         $request = $bdd->prepare('SELECT pseudo, mail, date_create, name_avatar, city FROM member WHERE id = :id ');
         $request->execute(array(
             'id' => $id));
-        //$resultat = $request->fetch();
+        
         return $request;
     }
-    public function avatarfile($id, $avatar){
+    public function avatarfile($id, $extensionsUpload){
         $bdd = $this -> bddconnect();
 
         $request = $bdd->prepare('UPDATE member SET name_avatar = :name_avatar WHERE id = :id');
         $request->execute(array(
             'id' => $id,
-            'name_avatar' => $avatar));
+            'name_avatar' => $_SESSION['id'] . ".". $extensionsUpload));
             
         return $request;
-    }    
+    }   
+    
+    
 }
