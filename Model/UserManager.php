@@ -65,5 +65,14 @@ class UserManager extends Database{
         //$resultat = $request->fetch();
         return $request;
     }
-    
+    public function avatarfile($id, $avatar){
+        $bdd = $this -> bddconnect();
+
+        $request = $bdd->prepare('UPDATE member SET name_avatar = :name_avatar WHERE id = :id');
+        $request->execute(array(
+            'id' => $id,
+            'name_avatar' => $avatar));
+            
+        return $request;
+    }    
 }

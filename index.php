@@ -52,6 +52,11 @@ try{
         elseif($_GET['action']=='account'){
             customer();
         }
+        elseif($_GET['action']='avatarfile'){
+            if(isset($_GET['id'])){
+                avatarfile($_GET['id']);
+            }
+        }
         else{
             throw new Exception("manque d'info");
         }

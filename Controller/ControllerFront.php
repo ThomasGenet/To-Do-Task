@@ -144,6 +144,38 @@ function customer(){
     $infoUsers = $req -> customer($id);
     require('./View/ViewCustomer.php');
 }
+function avatarfile(){
+    $req = new UserManager;
+    $id = $_SESSION['id'];
+    if(isset($_FILES['avatar']) AND !empty($_FILES['avatar']['name'])){
+        $sizeMax = 2097152;
+        $extensions = array('jpg', 'jpeg', 'png');
+        if($_FILES['avatar']['size'] <= $sizeMax){
+            $extensionsUpload = strtolower(substr(strchr($_FILES['avatar']['name'], '.'), 1));
+            if(in_array($extensionsUpload,$extensions)){
+                $chemin = "Public/avatar/".$_SESSION['id'].".".$extensionsUpload;
+                $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
+
+                if($resultat){
+                    $avatarFile = $req -> avatarfile($id, $resultat);
+                    header ('Location: index.php?action=account');
+                    exit();
+                    
+                }
+                else{
+
+                }
+            }
+            else{
+                throw new Exception('Photo profil doit etre en jpg jpeg ou png');
+            }
+        }
+        else{
+            throw new Exception('Photo profil ne doit pas dépasser 2Mo');
+        }
+    }
+    
+}
 function pagedefault(){
     require('./View/ViewLog.php');
 }

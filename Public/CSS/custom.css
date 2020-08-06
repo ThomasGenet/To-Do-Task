@@ -51,7 +51,21 @@ nav li{
  
 }
 .row{
-    width: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#row_avatar{
+    display: flex;
+    flex-direction: column;
+}
+#form_avatar{
+    display: flex;
+    justify-content: center;
+}
+.col{
+    display: flex;
+    justify-content: center;
 }
 #form-content .row{
     display: flex;
@@ -67,6 +81,11 @@ nav li{
     display: flex;
     justify-content: center;
     width: 75%;
+}
+#container_project{
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 /* navbar-fixed-left */
@@ -127,7 +146,7 @@ nav li{
   /* set default padding container */
   .navbar-fixed-left + .container,
   .navbar-fixed-left + .container-fluid {
-      margin-left: 180px;
+      margin-left: 7.5%;
   }
   
   
