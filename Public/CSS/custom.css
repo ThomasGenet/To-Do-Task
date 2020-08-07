@@ -77,15 +77,23 @@ nav li{
     position: absolute;
     
 }
-.list-group{
-    display: flex;
-    justify-content: center;
-    width: 75%;
-}
+
 #container_project{
     margin: auto;
     display: flex;
     justify-content: center;
+}
+.containers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container .list-group{
+    display: flex;
+    justify-content: center;
+   
+    width: 100%;
+    margin: auto;
 }
 
 /* navbar-fixed-left */

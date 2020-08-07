@@ -11,14 +11,14 @@ class TaskManager extends Database{
             return $req;
             
         }
-        public function newTask($contentTask, $id){
+        public function newTask($contentTask, $idSection){
             $bdd = $this -> bddconnect();
-            // Insertion
-            $req = $bdd->prepare('INSERT INTO task(id_section ,content, status, date) VALUES (:id_section ,:content, :status,CURDATE())');
+            // Insertion d'une condition WHERE idSection
+            $req = $bdd->prepare('INSERT INTO task(id_section ,content, status, date) VALUES (:id_section ,:content, :status,CURDATE()) ');
             $req->execute(array(    
             'content' => $contentTask,
             'status' => 0,
-            'id_section' => $id));
+            'id_section' => $idSection));
             return $req;
         }
         public function listSection($id){

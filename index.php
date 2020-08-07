@@ -26,6 +26,7 @@ try{
         }
         elseif($_GET['action']=='listTask'){
             if(isset($_GET['id'])){
+                
                 listTask($_GET['id']);
             }
             else{
@@ -33,8 +34,9 @@ try{
             }
         }
         elseif($_GET['action']== 'newTask'){
-            if(isset($_GET['id'])){
-                newTask($_GET['id']);
+            if(isset($_GET['idSection'])){
+                //die(var_dump($_GET['idSection']));
+                newTask($_GET['idSection']);
             }
             else{
                 throw new Exception("Pas de nouvelle tâche");
@@ -42,7 +44,6 @@ try{
         }
         elseif($_GET['action']== 'newSection'){
             if(isset($_GET['id'])){
-                
                 newSection($_GET['id']);
             }
         }
@@ -55,6 +56,9 @@ try{
         elseif($_GET['action']='avatarfile'){
             if(isset($_GET['id'])){
                 avatarfile($_GET['id']);
+            }
+            else{
+                throw new Exception("Pas de fichier avatar");
             }
         }
         else{
