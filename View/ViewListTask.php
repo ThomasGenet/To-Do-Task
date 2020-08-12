@@ -14,7 +14,23 @@
 
 <div class="containers">
     <div class="list-group">
-        <?php foreach ($listSections as $listSection): ?>
+        <?php //var_dump($listSections, $listTasks);?>
+        <?php $idSection = 0;
+        foreach ($listSections as $listSection): 
+            if($idSection == 0){
+                $idSection = $listSection['id'];
+            }
+            if($idSection != $listSection['id']){
+                ?>
+                </div>
+                <div>
+        <?php
+            $idSection = $listSection['id'];
+            }
+            else{
+                while()
+            }
+        ?>
             <div class="list-group-item"> <?= $listSection['content'] ?></div>
 
             <div class="list-group-item">

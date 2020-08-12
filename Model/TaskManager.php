@@ -4,8 +4,9 @@ require_once ('Model/Database.php');
 class TaskManager extends Database{
         public function listTask($id){
             $bdd = $this -> bddconnect();
-            // Insertion
-            $req = $bdd->prepare('SELECT * FROM task WHERE :id ORDER BY id asc');
+            // select section.content as section_content, task.content, task.id, section.id as id_section from section left join task on section.id=task.id_section where section.id_project=1 order by section.id ASC
+
+            $req = $bdd->prepare('SELECT * FROM task WHERE :id ORDER BY id_section asc');
             $req->execute(array(
                 'id' => $id));
             return $req;
