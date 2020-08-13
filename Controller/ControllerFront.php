@@ -120,8 +120,8 @@ function listTask($id){
     $req = new TaskManager;
     $listTasks = $req -> listTask($id);
     
-    $requ = new TaskManager;
-    $listSections = $requ -> listSection($id);
+    //$requ = new TaskManager;
+    //$listSections = $requ -> listSection($id);
     require('./View/ViewListTask.php');
 }
 function newTask($idSection){
