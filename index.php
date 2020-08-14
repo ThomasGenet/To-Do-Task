@@ -1,7 +1,7 @@
 <?php //Je suis le fichier routeur du site blog ecrivain
 session_start();
 
-require('./Controller/ControllerFront.php');
+require ('App/Controller/ControllerFront.php');
 
 
 try{

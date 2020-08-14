@@ -14,40 +14,51 @@
 
 <div class="containers">
     <div class="list-group">
-        
-            <?php foreach ($listTasks as $listTask): ?>
-        <div class="list-group-item"> <?= $listTask['section_content'] ?>
-        <div class="list-group-item"> <?= $listTask['content'] ?></div>
-            <?php $idSection = 0;
-            
+        <?php $idSection = 0;?>
+
+        <?php foreach ($listTasks as $listTask): ?>
+
+        <?php   
             if ($idSection == 0) {
-                $idSection = $listTask['id_section'];
+                $idSection = $listTask['id_section'];?>
+
+        <div class="list-group-item"> section <?= $listTask['section_content'] ?>
+            <?php
             }
             
-          //var_dump($idSection);
-            if($idSection < $listTask['id_section']){
+            if($idSection != $listTask['id_section']){ 
+                ?> <div class="list-group-item">
+                <form action="index.php?action=newTask&idSection=<?= $listTask['id']?>" method="post">
+                    <textarea name="taskContent" id="" cols="50" rows="1" class="md-textarea form-control"
+                        placeholder="Nouvelle tâche"></textarea>
+                    <input type="submit" class="btnSubmit" />
+                </form>
+            </div>
+        </div>
+
+        <div class="list-group-item"> section <?= $listTask['section_content'] ?>
+            <?php
                 $idSection = $listTask['id_section'];
                 ?>
-           </div>
-           <div>
+
             <?php
             
             }
-           
             ?>
-        </div>
-        <?php //endforeach;?>
-        
-       
+            <div class="list-group-item"> tâche <?= $listTask['content'] ?></div>
 
-        <div class="list-group-item">
+
+
+            <?php endforeach;?>
+            <div class="list-group-item">
             <form action="index.php?action=newTask&idSection=<?= $listTask['id']?>" method="post">
                 <textarea name="taskContent" id="" cols="50" rows="1" class="md-textarea form-control"
                     placeholder="Nouvelle tâche"></textarea>
                 <input type="submit" class="btnSubmit" />
             </form>
+            </div>
         </div>
-        <?php endforeach;?>
+
     </div>
 
 

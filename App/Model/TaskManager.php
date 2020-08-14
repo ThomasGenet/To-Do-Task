@@ -1,5 +1,6 @@
 <?php 
-require_once ('Model/Database.php');
+require_once ('vendor/autoload.php');
+use App\Model\Database;
 
 class TaskManager extends Database{
         public function listTask($id){

@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'To-Do-Task\\config\\' => array($baseDir . '/config'),
+    'App\\' => array($baseDir . '/App'),
 );

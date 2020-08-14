@@ -1,5 +1,6 @@
 <?php 
-require_once ('Model/Database.php');
+require_once ('vendor/autoload.php');
+use App\Model\Database;
 
 class ProjectManager extends Database{
     public function listProject(){

@@ -1,7 +1,7 @@
 <?php 
-require_once ('./Model/UserManager.php');
-require_once ('./Model/ProjectManager.php');
-require_once ('./Model/TaskManager.php');
+require_once ('App/Model/UserManager.php');
+require_once ('App/Model/ProjectManager.php');
+require_once ('App/Model/TaskManager.php');
 
 /**
  * registration
@@ -11,6 +11,7 @@ require_once ('./Model/TaskManager.php');
  *
  * @return void
  */
+
 function registration(){
 
     // Vérification de la validité des informations
@@ -114,7 +115,7 @@ function newProject(){
 function listProject(){
     $req = new ProjectManager;
     $listProjects = $req -> listProject();
-    require('./View/ViewListProject.php');
+    require('App/View/ViewListProject.php');
 }
 function listTask($id){
     $req = new TaskManager;
@@ -122,7 +123,7 @@ function listTask($id){
     
     //$requ = new TaskManager;
     //$listSections = $requ -> listSection($id);
-    require('./View/ViewListTask.php');
+    require('App/View/ViewListTask.php');
 }
 function newTask($idSection){
     //Voir où trouver l'id de section
@@ -144,7 +145,7 @@ function customer(){
     $id = $_SESSION['id'];
     $infoUsers = $req -> customer($id);
     
-    require('./View/ViewCustomer.php');
+    require('App/View/ViewCustomer.php');
 }
 function avatarfile(){
     
@@ -181,9 +182,9 @@ function avatarfile(){
 }
 
 function pagedefault(){
-    require('./View/ViewLog.php');
+    require('App/View/ViewLog.php');
 }
 function Error($e){
     $msgErreur = $e->getMessage();
-    require ('./View/ViewError.php');
+    require ('App/View/ViewError.php');
 }
