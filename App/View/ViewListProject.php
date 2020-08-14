@@ -29,7 +29,7 @@
     <div class="card" >
         <div class="card-body">   
             <h5 class="card-title"><?= $listProject ['title'] ?></h5>
-
+    <?= var_dump($listProject['id'])?>
             <a href="index.php?action=listTask&id=<?= $listProject['id']?>"  class="card-link">Voir le projet</a>
         </div>
         

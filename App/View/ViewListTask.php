@@ -22,13 +22,13 @@
             if ($idSection == 0) {
                 $idSection = $listTask['id_section'];?>
 
-        <div class="list-group-item"> section <?= $listTask['section_content'] ?>
+        <div class="list-group-item"> <?= $listTask['section_content'] ?>
             <?php
             }
             
             if($idSection != $listTask['id_section']){ 
                 ?> <div class="list-group-item">
-                <form action="index.php?action=newTask&idSection=<?= $listTask['id']?>" method="post">
+                <form action="index.php?action=newTask&idSection=<?= $listTask['id_section']?>" method="POST">
                     <textarea name="taskContent" id="" cols="50" rows="1" class="md-textarea form-control"
                         placeholder="Nouvelle tâche"></textarea>
                     <input type="submit" class="btnSubmit" />
@@ -36,7 +36,7 @@
             </div>
         </div>
 
-        <div class="list-group-item"> section <?= $listTask['section_content'] ?>
+        <div class="list-group-item"> <?= $listTask['section_content'] ?>
             <?php
                 $idSection = $listTask['id_section'];
                 ?>
@@ -45,13 +45,13 @@
             
             }
             ?>
-            <div class="list-group-item"> tâche <?= $listTask['content'] ?></div>
+            <div class="list-group-item"> <?= $listTask['content'] ?></div>
 
 
 
             <?php endforeach;?>
             <div class="list-group-item">
-            <form action="index.php?action=newTask&idSection=<?= $listTask['id']?>" method="post">
+            <form action="index.php?action=newTask&idSection=<?= $listTask['id_section']?>" method="post">
                 <textarea name="taskContent" id="" cols="50" rows="1" class="md-textarea form-control"
                     placeholder="Nouvelle tâche"></textarea>
                 <input type="submit" class="btnSubmit" />

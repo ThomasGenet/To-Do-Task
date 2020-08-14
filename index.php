@@ -35,7 +35,7 @@ try{
         }
         elseif($_GET['action']== 'newTask'){
             if(isset($_GET['idSection'])){
-                //die(var_dump($_GET['idSection']));
+                
                 newTask($_GET['idSection']);
             }
             else{
