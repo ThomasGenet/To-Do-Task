@@ -95,6 +95,14 @@ nav li{
     width: 100%;
     margin: auto;
 }
+.list-group-item-action{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#editimg{
+    width: 1em;
+}
 
 /* navbar-fixed-left */
 

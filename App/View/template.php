@@ -3,8 +3,8 @@
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="../Public/CSS/bootstrap-4.5.0-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../Public/CSS/custom.css">
+    <link rel="stylesheet" href="App/Public/CSS/bootstrap-4.5.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="App/Public/CSS/custom.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?= $title ;?> </title>

@@ -23,7 +23,21 @@ class TaskManager extends Database{
             'id_section' => $idSection));
             return $req;
         }
-        
+        public function updatetask($idTask, $content){
+            $bdd = $this -> bddconnect();
+            $req = $bdd->prepare('UPDATE task SET content = :content WHERE id = :id');
+            $req->execute(array(    
+                'content' => $content,
+                'id' => $idTask));
+                return $req;
+        }
+        public function deleteTask($idTask){
+            $bdd = $this -> bddconnect();
+            $req = $bdd->prepare('DELETE FROM task WHERE id = :id');
+            $req->execute(array(
+                'id' => $idTask));
+            return $req;
+        }
         public function newSection($contentSection, $id){
             $bdd = $this -> bddconnect();
             // Insertion

@@ -120,7 +120,7 @@ function listProject(){
 function listTask($id){
     $req = new TaskManager;
     $listTasks = $req -> listTask($id);
-    
+    $_SESSION['id_project'] = $id;
     require('App/View/ViewListTask.php');
 }
 
@@ -129,8 +129,22 @@ function newTask($idSection){
     $contentTask = htmlspecialchars_decode ($_POST['taskContent']);
     $req = new TaskManager;
     $newTask = $req -> newTask($contentTask, $idSection);
-    header ('Location: index.php?action=listTask&id=');
+    header ('Location: index.php?action=listTask&id=1');
     exit();
+}
+function updateTask($idTask){
+    $content = htmlspecialchars_decode($_POST['content']);
+    
+    $req = new TaskManager;
+    $newTask = $req -> updateTask($idTask, $content);
+    header ('Location: index.php?action=listTask&id=1');
+    exit();
+}
+function deleteTask($idTask){
+    $req = new TaskManager;
+    $newTask = $req -> deleteTask($idTask);
+    header ('Location: index.php?action=listTask&id=1');
+    exit(); 
 }
 function newSection($id){
     $contentSection = htmlspecialchars_decode ($_POST['sectionContent']);

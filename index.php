@@ -42,6 +42,16 @@ try{
                 throw new Exception("Pas de nouvelle tâche");
             }
         }
+        elseif($_GET['action']== 'updateTask'){
+            if(isset($_GET['idTask'])){
+                updateTask($_GET['idTask']);
+            }
+        }
+        elseif($_GET['action']=='deleteTask'){
+            if(isset($_GET['idTask'])){
+                deleteTask($_GET['idTask']);
+            }
+        }
         elseif($_GET['action']== 'newSection'){
             if(isset($_GET['id'])){
                 newSection($_GET['id']);
