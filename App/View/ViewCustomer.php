@@ -6,7 +6,7 @@
         <!-- Afficher avatar en function de l'upload -->
         <?php foreach($infoUsers as $infoUser):?>
         <?php if(!empty($infoUser['name_avatar'])){ ?>
-        <img src="Public/avatar/<?= $infoUser['name_avatar']?>" class="rounded mx-auto d-block" alt="..."
+        <img src="App/Public/avatar/<?= $infoUser['name_avatar']?>" class="rounded mx-auto d-block" alt="..."
             style="width:200px">
 
         <?php }?>
@@ -40,8 +40,9 @@
                 <li class="list-group-item">
                     <?= $infoUser['date_create'] ?>
                 </li>
-                <li class="list-group-item">
-                    <?= $infoUser['city'] ?>
+                <li class="list-group-item" >
+
+                    <span id="city"><?= $infoUser['city'] ?></span>
                 </li>
                 <?php endforeach;?>
             </ul>

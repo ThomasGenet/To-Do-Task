@@ -77,10 +77,26 @@ nav li{
     position: absolute;
     
 }
-
+.pagination{
+    display: flex;
+    
+    list-style: none;
+    border-radius: .25rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+.pagination li{
+    margin: 4px;
+}
+#row2{
+    position: absolute;
+    width: 77%;
+}
 #container_project{
     margin: auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .containers{

@@ -169,7 +169,7 @@ function avatarfile(){
         if($_FILES['avatar']['size'] <= $sizeMax){
             $extensionsUpload = strtolower(substr(strchr($_FILES['avatar']['name'], '.'), 1));
             if(in_array($extensionsUpload,$extensions)){
-                $chemin = "Public/avatar/".$_SESSION['id'].".".$extensionsUpload;
+                $chemin = "App/Public/avatar/".$_SESSION['id'].".".$extensionsUpload;
                 $resultat = move_uploaded_file($_FILES['avatar']['tmp_name'], $chemin);
 
                 if($resultat){

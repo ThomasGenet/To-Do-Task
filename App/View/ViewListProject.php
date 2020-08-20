@@ -3,12 +3,12 @@
 
 
 <div class="container">
-<?php if(isset($_SESSION['id'])){?>
-<div class="form">
+    <?php if(isset($_SESSION['id'])){?>
+    <div class="form">
         <div class="note">
             <p>Ajouter un projet</p>
         </div>
-<div class="form-content" id="form-content">
+        <div class="form-content" id="form-content">
             <form action="index.php?action=newProject" method="POST">
                 <div class="row">
                     <div class="col-md-6">
@@ -16,32 +16,47 @@
                             <input type="text" class="form-control" placeholder="Nom du projet" name="title" />
                         </div>
                     </div>
-                    
+
                 </div>
                 <input type="submit" class="btnSubmit" />
             </form>
         </div>
-</div>
-<div class="container" id="container_project">
-    <div class="row">
-<?php foreach ($listProjects as $listProject): ?>
-    <div class="col-sm" >
-    <div class="card" >
-        <div class="card-body">   
-            <h5 class="card-title"><?= $listProject ['title'] ?></h5>
-    <?= var_dump($listProject['id'])?>
-            <a href="index.php?action=listTask&id=<?= $listProject['id']?>"  class="card-link">Voir le projet</a>
+    </div>
+    <div class="container" id="container_project">
+        <div class="row">
+            <?php foreach ($listProjects as $listProject): ?>
+            <div class="col-sm">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $listProject ['title'] ?></h5>
+                        
+                        <a href="index.php?action=listTask&id=<?= $listProject['id']?>" class="card-link">Voir le
+                            projet</a>
+                    </div>
+
+                </div>
+            </div>
+            
+            <?php endforeach; ?>
+           
         </div>
-        
+        <div class="row" id="row2">
+        <ul class="pagination pagination-lg">
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+        </ul>
+
+        </div>
+        <?php }else{?>
+        <h3>Veuillez vous connecter</h3>
+        <?php }?>
+            
     </div>
-    </div>
-    <?php endforeach; ?>
-    </div>
-    <?php }else{?>
-    <h3>Veuillez vous connecter</h3>
-<?php }?>
-</div>
 
 
-<?php $content = ob_get_clean();?>
-<?php require ('template.php');?>
+
+    <?php $content = ob_get_clean();?>
+    <?php require ('template.php');?>

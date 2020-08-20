@@ -19,6 +19,9 @@
                 <h1>To Do Task</h1>
             </a>
             <br>
+            <img id="weather" src=""  width="45" height="45"></img>
+            
+            <br>
             <?php if(isset($_SESSION['id'])){ ?>
             <a href="index.php?action=logout">Deconnexion</a>
             <?php }else{?>
@@ -54,5 +57,6 @@
     </div>
 
 </body>
-
+<script src="App/Public/Javascript/API.js" ></script>
+<script src="App/Public/Javascript/main.js" ></script>
 </html>
