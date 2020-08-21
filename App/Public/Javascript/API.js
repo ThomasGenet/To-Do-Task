@@ -1,15 +1,13 @@
 class Weather{
-    constructor(weather){
-        this.weather = document.getElementById('weather');
+    constructor(){
         this.city = document.getElementById('city');
         console.log(this.city);
-        
     }
     affichage(){
-        
-        fetch('http://www.prevision-meteo.ch/services/json/paris')
+        //mettre this.city à la place de paris
+        fetch('http://www.prevision-meteo.ch/services/json/'+ this.city)
         .then(response => response.json())
-        .then(data => console.log(data.current_condition.icon));
+        .then(data => document.getElementById('weather').src = data.current_condition.icon);
         
     }
     

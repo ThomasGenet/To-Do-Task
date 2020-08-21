@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="container" id="container_project">
-        <div class="row">
+        <div class="row" id="projectList">
             <?php foreach ($listProjects as $listProject): ?>
             <div class="col-sm">
                 <div class="card">
@@ -42,11 +42,13 @@
         </div>
         <div class="row" id="row2">
         <ul class="pagination pagination-lg">
+                <button class="btn" id="lastPage"><</button>
                 <li><a href="#">1</a></li>
                 <li><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
                 <li><a href="#">4</a></li>
                 <li><a href="#">5</a></li>
+                <button class="btn" id="nextPage">></button>
         </ul>
 
         </div>
@@ -57,6 +59,7 @@
     </div>
 
 
-
+    
     <?php $content = ob_get_clean();?>
+    
     <?php require ('template.php');?>

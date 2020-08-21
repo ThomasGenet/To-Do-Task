@@ -19,6 +19,7 @@
                 <h1>To Do Task</h1>
             </a>
             <br>
+           <span> <?= $_SESSION['city'] ?></span>
             <img id="weather" src=""  width="45" height="45"></img>
             
             <br>
@@ -57,6 +58,7 @@
     </div>
 
 </body>
+<script src="App/Public/Javascript/pagination.js" ></script>
 <script src="App/Public/Javascript/API.js" ></script>
 <script src="App/Public/Javascript/main.js" ></script>
 </html>

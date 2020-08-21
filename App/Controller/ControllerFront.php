@@ -84,6 +84,7 @@ function connect(){
                 
                 $_SESSION['id'] = $infoUser['id'];
                 $_SESSION['pseudo'] = $infoUser['pseudo'];
+                $_SESSION['city'] = $infoUser['city'];
                 echo "vous êtes connecté";
                 header ('Location: index.php');
                 exit();

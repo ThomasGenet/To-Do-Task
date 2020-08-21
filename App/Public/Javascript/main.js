@@ -1,6 +1,18 @@
+//Meteo affichage
+let map = new Weather();
+map.affichage();
 
-let map = new Weather("weather");
+//Pagination affichage
+let list = new Pagination();
+console.log(list);
+list.showList();
 
-document.getElementById('weather') = map.affichage();
-
-
+//Contrôle des buttons
+next = document.getElementById('nextPage');
+next.onclick = function(){
+    list.nextPage();
+}
+last = document.getElementById('lastPage');
+last.onclick = function(){
+    list.lastPage();
+}
