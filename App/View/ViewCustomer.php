@@ -42,7 +42,7 @@
                 </li>
                 <li class="list-group-item" >
 
-                    <span id="city"><?= $infoUser['city'] ?></span>
+                    <span id="city2"><?= $infoUser['city'] ?></span>
                 </li>
                 <?php endforeach;?>
             </ul>

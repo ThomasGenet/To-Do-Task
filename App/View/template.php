@@ -19,7 +19,8 @@
                 <h1>To Do Task</h1>
             </a>
             <br>
-           <span> <?= $_SESSION['city'] ?></span>
+            <span id="city" style="display: none;"><?= $_SESSION['city'] ?></span>
+            
             <img id="weather" src=""  width="45" height="45"></img>
             
             <br>

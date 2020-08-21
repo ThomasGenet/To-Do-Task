@@ -4,7 +4,6 @@ map.affichage();
 
 //Pagination affichage
 let list = new Pagination();
-console.log(list);
 list.showList();
 
 //Contrôle des buttons

@@ -1,25 +1,23 @@
 class Pagination{
     constructor(){
-        this.list = document.getElementById('projectList');
+        this.list = document.getElementsByClassName('card');
+        console.log(this.list); 
+        console.log(this.list.length);
         this.actualPage = 1;
-        this.tableList;
-        this.numberOfItems = 5;
+        this.tableList= "";
+        this.numberOfItems = 4;
         this.first = 0;
     }
     showList(){
         
         for(let i = this.first; i < this.numberOfItems;i++){
-          //console.log(i);
           if(i<this.numberOfItems){
-            this.tableList += `
-            <div class="col-sm">
-              <card>${this.list[i]}</card>
-            </div>
-          `  
+            this.tableList +=  this.list[i];
+            console.log(this.list[i]);
           }
+          
         }
-        
-        document.getElementById('projectList').innerHTML = this.tableList;	
+        console.log(this.tableList);
         
     }
     nextPage(){
