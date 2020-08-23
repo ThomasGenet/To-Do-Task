@@ -1,6 +1,7 @@
 class Weather{
     constructor(){
         this.city = document.getElementById('city').textContent;
+        
         console.log(this.city);
     }
     affichage(){

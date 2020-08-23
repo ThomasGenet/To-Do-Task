@@ -41,8 +41,10 @@
                     <?= $infoUser['date_create'] ?>
                 </li>
                 <li class="list-group-item" >
-
-                    <span id="city2"><?= $infoUser['city'] ?></span>
+                    <form action="index.php?action=updateCity&idMember="<?=$_SESSION['id']?> method="POST">
+                    <input id="city2" value="<?= $infoUser['city'] ?>" name="city"></input>
+                    <input type="submit">
+                    </form>
                 </li>
                 <?php endforeach;?>
             </ul>

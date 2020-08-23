@@ -12,14 +12,21 @@ try{
                 connect();
     
         }
+        elseif($_GET['action']== 'updateCity'){
+            if(isset($_GET['idMember'])){
+                updateCity();
+            }
+            else{
+                throw new Exception("Vous n'avez pas mis à jour votre ville");
+            }
+        }
         elseif($_GET['action']=='project'){
             if(isset($_SESSION['id'])){
                 listProject();
             }else{
                 throw new Exception("Vous n'êtes pas connecté");
                 
-            }
-            
+            } 
         }
         elseif($_GET['action']== 'newProject'){
             newProject();

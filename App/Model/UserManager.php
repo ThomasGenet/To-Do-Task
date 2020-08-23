@@ -44,7 +44,14 @@ class UserManager extends Database{
         return $resultat;
         
     }
-    
+    public function updateCity($id, $city){
+        $bdd = $this -> bddconnect();
+        $request = $bdd->prepare('UPDATE member SET city = :city WHERE id = :id');
+        $request->execute(array(
+            'id' => $id,
+            'city' => $city));
+        return $request;
+    }
     public function logout(){
        
        // Suppression des variables de session et de la session

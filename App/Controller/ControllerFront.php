@@ -98,6 +98,15 @@ function connect(){
     require ('./View/ViewLog.php');
     
 }
+function updateCity(){
+    $id = $_SESSION['id'];
+    $city = htmlspecialchars($_POST['city']);
+    $req = new UserManager;
+    $req -> updateCity($id, $city);
+    
+    header ('Location: index.php?action=account');
+    exit();
+}
 function logout(){
     $req = new UserManager;
     $req -> logout();
