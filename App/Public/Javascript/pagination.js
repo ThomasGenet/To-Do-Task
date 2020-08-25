@@ -4,24 +4,22 @@ class Pagination{
         console.log(this.list); 
         console.log(this.list.length);
         this.actualPage = 1;
-        this.tableList= "";
-        this.numberOfItems = 4;
+        this.tableList = "";
+        this.numberOfItems = 5;
         this.first = 0;
     }
     showList(){
         
         for(let i = this.first; i < this.numberOfItems;i++){
           if(i<this.numberOfItems){
-            this.tableList +=  this.list[i];
             console.log(this.list[i]);
+            this.tableList +=  this.list[i];  
           }
-          
         }
         console.log(this.tableList);
-        
     }
     nextPage(){
-        if(this.first+this.numberOfItems<=this.list){
+        if(this.first+this.numberOfItems<=this.list.length){
             this.first += this.numberOfItems;
             this.actualPage++;
             showList();

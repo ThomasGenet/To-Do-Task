@@ -29,37 +29,33 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title"><?= $listProject ['title'] ?></h5>
-                        
+
                         <a href="index.php?action=listTask&id=<?= $listProject['id']?>" class="card-link">Voir le
                             projet</a>
                     </div>
 
                 </div>
             </div>
-            
+
             <?php endforeach; ?>
-           
+
         </div>
         <div class="row" id="row2">
-        <ul class="pagination pagination-lg">
+            <ul class="pagination pagination-lg">
                 <button class="btn" id="lastPage"><</button>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
+                        
                 <button class="btn" id="nextPage">></button>
-        </ul>
+            </ul>
 
         </div>
         <?php }else{?>
         <h3>Veuillez vous connecter</h3>
         <?php }?>
-            
+
     </div>
 
 
-    
+
     <?php $content = ob_get_clean();?>
-    
+
     <?php require ('template.php');?>

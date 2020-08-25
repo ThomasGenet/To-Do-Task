@@ -22,12 +22,6 @@
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Mot de passe" name="pass" />
                         </div>
-                        <!--
-                        <div class="form-group">
-                            <input type="password" class="form-control" placeholder="Confirmation du mot de passe"
-                                name="pass2" />
-                        </div>
-                        -->
                     </div>
                 </div>
                 <input type="submit" class="btnSubmit" />
@@ -46,13 +40,13 @@
                         <div class="form-group">
                             <input type="email" class="form-control" placeholder="Votre email" name="mail_log" />
                         </div>
-                        
+
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <input type="password" class="form-control" placeholder="Mot de passe" name="pass_log" />
                         </div>
-                        
+
                     </div>
                 </div>
                 <input type="submit" class="btnSubmit" />
@@ -63,5 +57,3 @@
 
 <?php $content = ob_get_clean();?>
 <?php require ('template.php');?>
-
-
