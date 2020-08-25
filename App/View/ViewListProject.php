@@ -40,10 +40,11 @@
             <?php endforeach; ?>
 
         </div>
-        <div class="row" id="row2">
+        <div class="container" id="row2">
             <ul class="pagination pagination-lg">
+                
                 <button class="btn" id="lastPage"><</button>
-                        
+                <span id="pageInfo"></span>
                 <button class="btn" id="nextPage">></button>
             </ul>
 

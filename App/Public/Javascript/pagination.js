@@ -7,6 +7,8 @@ class Pagination{
         this.tableList = "";
         this.numberOfItems = 5;
         this.first = 0;
+        this.maxPage = Math.ceil(this.list.length / this.numberOfItems);
+        
     }
     showList(){
         
@@ -32,5 +34,8 @@ class Pagination{
             this.actualPage --;
             showList();
           }
+    }
+    showPageInfo(){
+        document.getElementById('pageInfo').innerHTML = 'Page ' + this.actualPage + ' / ' + this.maxPage;
     }
 }

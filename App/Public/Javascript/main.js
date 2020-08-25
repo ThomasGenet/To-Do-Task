@@ -5,6 +5,7 @@ map.affichage();
 //Pagination affichage
 let list = new Pagination();
 list.showList();
+list.showPageInfo();
 
 //Contrôle des buttons
 next = document.getElementById('nextPage');
