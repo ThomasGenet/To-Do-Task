@@ -1,8 +1,6 @@
 class Pagination{
     constructor(){
-        this.list = document.getElementsByClassName('card');
-        console.log(this.list); 
-        console.log(this.list.length);
+        this.list = document.getElementsByClassName('col-sm');
         this.actualPage = 1;
         this.tableList = "";
         this.numberOfItems = 5;
@@ -11,20 +9,30 @@ class Pagination{
         
     }
     showList(){
-        
-        for(let i = this.first; i < this.numberOfItems;i++){
-          if(i<this.numberOfItems){
-            console.log(this.list[i]);
-            this.tableList +=  this.list[i];  
-          }
+        for(let i = 0; i < this.list.length;i++){
+              this.list[i].style.display = "none";
+
         }
-        console.log(this.tableList);
+        let fin = this.numberOfItems + this.first;
+        
+        if(fin > this.list.length ){
+            fin = this.list.length ;
+        }
+        
+        for(let i = this.first; i < fin;i++){ 
+                this.list[i].style.display = "block";
+        }
+        
+    }
+    showPageInfo(){
+        document.getElementById('pageInfo').innerHTML = 'Page ' + this.actualPage + ' / ' + this.maxPage;
     }
     nextPage(){
         if(this.first+this.numberOfItems<=this.list.length){
             this.first += this.numberOfItems;
             this.actualPage++;
-            showList();
+            this.showList();
+            this.showPageInfo();
         }
         
     }
@@ -32,10 +40,9 @@ class Pagination{
         if(this.first-this.numberOfItems >= 0){
             this.first-=this.numberOfItems
             this.actualPage --;
-            showList();
+            this.showList();
+            this.showPageInfo();
           }
     }
-    showPageInfo(){
-        document.getElementById('pageInfo').innerHTML = 'Page ' + this.actualPage + ' / ' + this.maxPage;
-    }
+    
 }

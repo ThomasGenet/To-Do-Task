@@ -103,6 +103,7 @@ function updateCity(){
     $city = htmlspecialchars($_POST['city']);
     $req = new UserManager;
     $req -> updateCity($id, $city);
+    $_SESSION['city'] = $_POST['city'];
     
     header ('Location: index.php?action=account');
     exit();

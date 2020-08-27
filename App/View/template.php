@@ -20,7 +20,7 @@
             </a>
             <br>
             <span id="city" style="display: none;"><?= $_SESSION['city'] ?></span>
-            <img id="weather" src="" width="45" height="45"></img>
+            <img id="weather" src="Capture d’écran 2020-08-13 à 14.55.07.png" width="45" height="45" alt="avatar">
             <br>
             <?php if(isset($_SESSION['id'])){ ?>
             <a href="index.php?action=logout">Deconnexion</a>
@@ -57,8 +57,8 @@
     </div>
 
 </body>
-<script src="App/Public/Javascript/pagination.js"></script>
-<script src="App/Public/Javascript/API.js"></script>
-<script src="App/Public/Javascript/main.js"></script>
+
+<script src="App/Public/Javascript/API.js"> </script>
+<script src="App/Public/Javascript/main.js"> </script>
 
 </html>
