@@ -15,25 +15,28 @@
 
     <nav id="navbar-custom" class="navbar navbar-default navbar-fixed-left">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <h1>To Do Task</h1>
             </a>
             <br>
-            <span id="city" style="display: none;"><?= $_SESSION['city'] ?></span>
-            <img id="weather" src="Capture d’écran 2020-08-13 à 14.55.07.png" width="45" height="45" alt="avatar">
-            <br>
             <?php if(isset($_SESSION['id'])){ ?>
+            <span id="city" style="display: none;"><?= $_SESSION['city'] ?></span>
+            <img id="weather" src="../Public/IMG/edit.png " width="45" height="45" alt="avatar">
+            <br>
+            
             <a href="index.php?action=logout">Deconnexion</a>
-            <?php }else{?>
-            <a href="index.php">Se connecter</a>
-            <?php } ?>
             <br>
             <a href="index.php?action=account">Mon compte</a>
+            <?php }else{?>
+            <a href="index.php">Se connecter</a>
+            
+            <?php } ?>
+            
         </div>
         <ul class="nav justify-content-center">
 
             <li class="nav-item active">
-                <a class="nav-link" href="#">Accueil</a>
+                <a class="nav-link" href="index.php">Accueil</a>
             </li>
             <?php if(isset($_SESSION['id'])){ ?>
             <li class="nav-item">
@@ -52,13 +55,10 @@
     <div class="container-fluid">
         <div class="app-main-content">
             <?= $content; ?>
-
         </div>
     </div>
 
+    <script src="App/Public/Javascript/API.js"> </script>
+    <script src="App/Public/Javascript/main.js"> </script>
 </body>
-
-<script src="App/Public/Javascript/API.js"> </script>
-<script src="App/Public/Javascript/main.js"> </script>
-
 </html>

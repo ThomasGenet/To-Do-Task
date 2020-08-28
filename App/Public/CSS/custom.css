@@ -92,6 +92,9 @@ nav li{
 #row2{
     position: absolute;
     width: 77%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #container_project{
     margin: auto;

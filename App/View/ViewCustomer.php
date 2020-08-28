@@ -13,8 +13,8 @@
 
         <form action="index.php?action=avatarfile&id=<?php $_SESSION['id']?>" id="form_avatar" method="POST"
             enctype="multipart/form-data">
-            <label for="">Avatar :</label>
-            <input type="file" name="avatar"></input>
+            <label >Avatar :</label>
+            <input type="file" name="avatar">
             <input type="submit">
         </form>
     </div>
@@ -41,8 +41,8 @@
                     <?= $infoUser['date_create'] ?>
                 </li>
                 <li class="list-group-item">
-                    <form action="index.php?action=updateCity&idMember=" <?=$_SESSION['id']?> method="POST">
-                        <input id="city2" value="<?= $infoUser['city'] ?>" name="city"></input>
+                    <form action="index.php?action=updateCity&idMember=<?=$_SESSION['id']?>" method="POST">
+                        <input id="city2" value="<?= $infoUser['city'] ?>" name="city">
                         <input type="submit">
                     </form>
                 </li>

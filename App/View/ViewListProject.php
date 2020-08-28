@@ -41,12 +41,12 @@
 
         </div>
         <div class="container" id="row2">
-            <ul class="pagination pagination-lg">
+            
                 
                 <button class="btn" id="lastPage"> &lsaquo; </button>
                 <span id="pageInfo"></span>
                 <button class="btn" id="nextPage"> &rsaquo; </button>
-            </ul>
+            
 
         </div>
         <?php }else{?>
@@ -54,8 +54,7 @@
         <?php }?>
 
     </div>
-
-            
+    </div>      
     <script src="App/Public/Javascript/pagination.js"> </script>
     <script src="App/Public/Javascript/mainPagination.js"></script>
     <?php $content = ob_get_clean();?>

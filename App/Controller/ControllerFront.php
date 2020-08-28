@@ -137,7 +137,7 @@ function listTask($id){
 
 function newTask($idSection){
     //Voir où trouver l'id de section
-    $contentTask = htmlspecialchars_decode ($_POST['taskContent']);
+    $contentTask = htmlspecialchars ($_POST['taskContent']);
     $req = new TaskManager;
     $newTask = $req -> newTask($contentTask, $idSection);
     header ('Location: index.php?action=listTask&id=1');
